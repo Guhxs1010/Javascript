@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de botão interativo</title>
+</head>
+<body>
+  <button id="color-button">Clique aqui</button>
+
+  <script>
+    const button = document.querySelector('#color-button');
+    const colors = ['red', 'green', 'blue'];
+    let currentColorIndex = 0;
+
+    button.addEventListener('mouseover', () => {
+      button.style.backgroundColor = colors[currentColorIndex];
+    });
+
+    button.addEventListener('click', () => {
+      currentColorIndex = (currentColorIndex + 1) % colors.length;
+      button.style.backgroundColor = colors[currentColorIndex];
+    });
+
+    button.addEventListener('mouseout', () => {
+      button.style.backgroundColor = 'gray';
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume</title> 
+    <style>
+        *{
+        border: 0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box  
+        }
+        .box-degrade{
+            width: 1536px;
+            padding: 100px 0 ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(to left , #5271FF, #004aad,rgb(66, 167, 255) );
+            background-size: 500% 100%;
+            animation: degrade-animado 5s infinite alternate;
+        }
+        @keyframes degrade-animado{
+            0%{
+                background-position-x: 0%;
+            }
+            100%{
+                background-position-x:100% ;
+            }
+
+        }
+        .Formas{
+            display: flex;
+        }
+        
+        .ret, .tri, .cir, .tra, .ci{
+            width: 200px;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            margin: 0 50px;
+        }
+        .ret:hover, .tri:hover, .cir:hover, .tra:hover, .ci:hover{
+            width: 230px;
+            height: 500px;
+            cursor: pointer;
+            transition: 3s;
+        }
+
+        img{
+          width: 250px;
+        }
+        h1{
+            font-size: 30px;
+        }
+        @media screen and (max-width: 400px){
+            .box-degrade{
+                width: 320px;
+                height: 651px;
+            }
+            .Formas{
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .ret, .tri, .cir, .tra, .ci{
+                width:10px ;
+                height: 200px;
+                margin-top: 10px;
+            }
+            .ret:hover, .tri:hover, .cir:hover, .tra:hover, .ci:hover{
+                width: 15px;
+                height: 205px;
+                transition: 3s;
+            }
+
+            img{
+                width: 100px;
+            }
+            
+            
+
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box-degrade">
+    <!-- Formas -->
+    <div class="Formas">
+        <div class="ret">
+    <button onclick="Volume()" class="retangulo">
+        Retangulo
+        <div class="img">
+        <img src="img/qua-removebg-preview.png" alt="">
+    </div>
+    <h1 id="ident"></h1>
+    </button>
+</div>
+
+   <div class="tri">
+    <button onclick="Volumetri()" class="triangulo">
+        Triangulo
+        <div class="img">
+        <img src="img/triangulo.png" alt="">
+    </div>
+    <h1 id="identtri"></h1>
+    </button>
+</div>
+
+    <div class="cir">
+    <button  onclick="Volumecir()"circulo">
+        Circulo
+        <div class="img">
+        <img src="img/circulo.png" alt="">
+    </div>
+    <h1 id="identcir"></h1>
+    </button>
+</div>
+
+<div class="tra">
+    <button  onclick="Volumetra()"trapezio">
+        Trapezio
+        <div class="img">
+        <img src="img/trapezio.png" alt="">
+    </div>
+    <h1 id="identtra"></h1>
+    </button>
+</div>
+
+<div class="ci">
+    <button onclick="Volumeci()" class="cilindro">
+        Cilindro
+        <div class="img">
+        <img src="img/cilindro.png" alt="">
+    </div>
+    <h1 id="identci"></h1>
+    </button>
+</div>
+
+</div>
+    </div>
+    
+    <script>
+        function Volume(){
+        let a=Number(prompt("Qual a Altura"));
+        let b=Number(prompt("Qual a Largura "));
+        let c=Number(prompt("Qual o Comprimento "));
+        let r=a*b*c
+        alert("O Volume da Figura é:" +r)
+        let Cap=document.getElementById('ident')
+        Cap.style.color='blue';
+        Cap.innerHTML=r
+        }
+        function Volumetri(){
+        let d=Number(prompt("Qual a Area da Base"));
+        let e=Number(prompt("Qual a Altura "));
+        let g=d*e/3
+        alert("O Volume da Figura é:" +g)
+        let Cap1=document.getElementById('identtri')
+        Cap1.style.color='blue';
+        Cap1.innerHTML=g
+        }
+        function Volumecir(){
+        let h=Number(prompt("Qual a Area da Base"));
+        let i=Number(prompt("Qual a Altura"));
+        let k=h*i*3.14
+        alert("O Volume da Figura é:" +k)
+        let Cap1=document.getElementById('identcir')
+        Cap1.style.color='blue';
+        Cap1.innerHTML=k
+        }
+        function Volumetra(){
+        let l=Number(prompt("Qual a Area da Base"));
+        let m=Number(prompt("Qual a Largura "));
+        let o=l/2*m
+        alert("O Volume da Figura é:" +o)
+        let Cap1=document.getElementById('identtra')
+        Cap1.style.color='blue';
+        Cap1.innerHTML=o
+        }
+        function Volumeci(){
+        let p=Number(prompt("Qual o Raio"));
+        let q=Number(prompt("Qual a Altura "));
+        let t=p*q*3.14
+        alert("O Volume da Figura é:" +t)
+        let Cap1=document.getElementById('identci')
+        Cap1.style.color='blue';
+        Cap1.innerHTML=t
+        }
+        
+    </script>
+
+
+</body>
+</html>

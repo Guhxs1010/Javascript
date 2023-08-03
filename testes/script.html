@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script</title>
+</head>
+<body>
+    <button onclick="Somar( )">
+    Somar
+</button>
+
+<button onclick="chamaMulti()">
+     Multiplicar
+</button>
+
+<button onclick="chamaRaiz ()">
+    Raiz
+</button>
+
+    <script>
+        function Somar(){
+        let x=Number(prompt("Insira um Número"));
+        let y=Number(prompt("Insira outro Número "));
+        let res=x+y;
+        alert("O resultado da soma é:" +(x+y))
+    }
+    function chamaMulti(){
+        let a = Number(prompt("Insira um Número "));
+        let b = Number(prompt("Insira outro Número"));
+        alert("O resultado da multiplicação é:" +Mult(a,b))
+    }
+    function Mult(a,b){
+        return a*b
+    }
+    function chamaRaiz(){
+        let c = Number(prompt("Insira um Número"));
+        alert("A raiz é:" +Math.sqrt(c));
+    }
+
+    </script>
+</body>
+</html>
